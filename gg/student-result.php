@@ -13,10 +13,11 @@ include($nav);
 $log_userid = $_SESSION['id'];
 //$quizid = $_GET['quizid'];
 $quizid = $_GET['qid'];
-$sql = "SELECT *, (SELECT COUNT(quques_id) FROM quiz_question qq WHERE qq.quiz_id = '$quizid') AS totalquestion FROM quiz q INNER JOIN teacher t WHERE (q.teac_id = t.teac_id) AND q.quiz_id = '$quizid'";
+$sql = "SELECT *, (SELECT COUNT(quques_id) FROM quiz_question WHERE quiz.quiz_id = '$quizid') AS totalquestion FROM quiz  INNER JOIN teacher  WHERE (quiz.teac_id = teacher.teac_id) AND quiz.quiz_id = '$quizid'";
+
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
-$totalques = $row['totalquestion'];
+
 
 ?>
 
@@ -31,7 +32,23 @@ $totalques = $row['totalquestion'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="icon" type="image/png" href="Images/skillsoft-favicon.png">
     <link rel="stylesheet" href="stylesheets/stud-result.css">
-    <title><?php echo $row['quiz_title'];?></title>
+    <?php 
+                $sql = "select * from quiz where quiz_id = '$quizid'";
+                $re = mysqli_query($conn, $sql);
+                while($row=mysqli_fetch_array($re))
+                {
+                    $title  = $row['quiz_title'];
+
+                ?>
+                
+             
+               
+                 
+              
+    <title><?php echo $title;?></title>  
+    <?php 
+                }
+                ?>   
 </head>
 <body>
     <section class="show-all-quiz-ques" id="show-all-quiz-ques">

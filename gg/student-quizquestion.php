@@ -12,11 +12,17 @@ include($nav);
 
 $log_userid = $_SESSION['id'];
 $quizid = $_GET['quizid'];
-$sql = "SELECT * FROM quiz q INNER JOIN teacher t WHERE (q.teac_id = t.teac_id) AND q.quiz_id = '$quizid'";
+$sql = "SELECT * FROM quiz INNER JOIN teacher  WHERE (quiz.teac_id = teacher.teac_id) AND quiz.quiz_id = '$quizid'";
+
 $result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_array($result);
+$row=mysqli_fetch_row($result);
+
+
+
+
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,21 +35,51 @@ $row = mysqli_fetch_array($result);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="icon" type="image/png" href="Images/skillsoft-favicon.png">
     <link rel="stylesheet" href="stylesheets/stud-quizquestion.css">
-    <title><?php echo $row['quiz_title'];?></title>
+    <?php 
+                $sql = "select * from quiz where quiz_id = '$quizid'";
+                $re = mysqli_query($conn, $sql);
+                while($row=mysqli_fetch_array($re))
+                {
+                    $title  = $row['quiz_title'];
+
+                ?>
+                
+             
+               
+                 
+              
+    <title><?php echo $title;?></title>  
+    <?php 
+                }
+                ?>   
 </head>
 <body>
     <section class="show-all-quiz-ques" id="show-all-quiz-ques">
     <?php include("backBtn.php");?>
         <div class="quiz-list-all">
             <div class="title-col">
-                <p class="quiz-title"><?php echo $row['quiz_title'];?></p>
+                <?php 
+                $sql = "select * from quiz where quiz_id = '$quizid'";
+                $re = mysqli_query($conn, $sql);
+                while($row=mysqli_fetch_array($re))
+                {
+                    $title  = $row['quiz_title'];
+
+                ?>
+                
+             
+               
+                <p class="quiz-title"><?php echo $title; ?></p>   
+                <?php 
+                }
+                ?>
                 <div class="create-info">
-                    <p>Created By: <?php echo $row['teac_first_name'];?>&nbsp<?php echo $row['teac_last_name'];?></p>
-                    <p>Created On: <?php echo $row['quiz_create_date'];?></p>
+          
                     <h2 id="timer-countdown"></h2>
                 </div>
             </div>
-            <!--display question container-->
+         
+<!--display question container-->
             <div class="question-container" id="question-container">
                 <form class="ques-list" method ="POST" action ="check-answer.php" id="submit">
                     <?php
@@ -160,7 +196,7 @@ $row = mysqli_fetch_array($result);
         function updateTimer()
         {
         msLeft = endTime - (+new Date);
-        if ( msLeft <= 0000 ) {
+        if ( msLeft<=0) {
             alert("Times UP! Submit Quiz?");
             document.getElementById("submit").submit();
         } else {
