@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `skillsoft`
+-- Database: `quizzz`
 --
 
 -- --------------------------------------------------------
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`adm_id`, `adm_username`, `adm_password`, `adm_email`, `adm_first_name`, `adm_last_name`) VALUES
-(1, 'admin', '$2y$10$S7ZGmzk2pv98Gw4LUdtCoetiWy7uXlDHuvGN/Po52EuO81DyospFy', 'admintan@gmail.com', 'Admin', 'Tan');
+(1, 'adminchau', '090103', 'adminchaung@gmail.com', 'Admin', 'chau');
 
 -- --------------------------------------------------------
 
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `history` (
   `his_date_time` timestamp NOT NULL,
   `stud_id` int NOT NULL,
   PRIMARY KEY (`his_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `history`
