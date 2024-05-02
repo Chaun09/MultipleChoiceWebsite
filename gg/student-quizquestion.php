@@ -67,6 +67,7 @@ $row=mysqli_fetch_row($result);
 
                 ?>
                 
+                
              
                
                 <p class="quiz-title"><?php echo $title; ?></p>   
