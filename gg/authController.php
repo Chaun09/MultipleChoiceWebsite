@@ -63,7 +63,7 @@ if (isset($_POST['stud-reg'])) {
 
     if (count($errors) === 0) 
     {
-        $stud_password = password_hash($stud_password, PASSWORD_DEFAULT);
+        $stud_password1 = $stud_password;
         $token = bin2hex(random_bytes(50));
         $verified = false; 
 
@@ -140,12 +140,12 @@ if (isset($_POST['teach-reg'])) {
     }
 
     if (count($errors) === 0) {
-        $teac_password = password_hash($teac_password, PASSWORD_DEFAULT);
+        $teac_password1 = $teac_password;
 
         $sql = "INSERT INTO teacher (teac_username, teac_password, teac_email, teac_first_name, teac_last_name, teac_edu_proof, teac_status) 
         VALUES (?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sssssss',$teac_username, $teac_password, $teac_email, $teac_first_name, $teac_last_name, $image, $teac_status);
+        $stmt->bind_param('sssssss',$teac_username, $teac_password1, $teac_email, $teac_first_name, $teac_last_name, $image, $teac_status);
         
         if ($stmt->execute()) {
             // login user

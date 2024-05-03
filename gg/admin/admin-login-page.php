@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin-login.css">
-    <link rel="icon" type="image/png" href="Images/skillsoft-favicon.png">
+    <link rel="icon" type="image/png" href="../Images/admin.png-removebg-preview copy.png">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <title>Admin Login</title>
 </head>
