@@ -43,7 +43,7 @@ $sid = $row['stud_id'];
             </div>
         </div>
 
-        <!--Open Update Avatar Modal-->
+        
         <div id="avatarset-modal" class="avatarset-modal">
             <div class="modal-content">
                 <form class="avatar-update-info" method = "POST" action = "update-propic.php"  enctype="multipart/form-data">

@@ -10,6 +10,7 @@
         <script src="https://kit.fontawesome.com/8e94eefdff.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+
     <body>
         <section class="top-nav-bar" style="z-index:50;" id="top-nav-bar">
                 <div class="left-nav" id="left-nav">
