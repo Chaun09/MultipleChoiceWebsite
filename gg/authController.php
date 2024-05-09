@@ -250,7 +250,7 @@ if (isset($_POST['stud_login'])) {
             $result = $stmt->get_result();
             $user = $result->fetch_assoc();
 
-            if ($user['verified'] == "0" && password_verify($log_password, $user['hashed_password'])) {
+            if ($user['verified'] == "0" && $log_password == $user['hashed_password']) {
                 // login success
                 $_SESSION['id'] = $user['stud_id'];
                 $_SESSION['stud_email'] = $user['stud_email'];

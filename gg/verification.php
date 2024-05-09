@@ -37,7 +37,7 @@ if (!isset($_SESSION['id'])) {
                  
                     <?php if(!$_SESSION['verified']): ?>
                         <?php echo '<script>alert("Your account has been successfully verified!");
-                        window.location="student-quiz.php";   y
+                        window.location="student-quiz.php";   
                         </script>'; ?>
                     <?php endif; ?>
                 </div>

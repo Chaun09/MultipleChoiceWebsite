@@ -65,29 +65,7 @@ $sid = $row['stud_id'];
             </div>
         </section>
 
-        <div class="" id="dropdown-list">
-            <a class="skillsoft-logo" href="student-quiz.php">SkillSoft.</a>
-            <ul class="main-menu">
-                <li><a href="#" name="all_quiz">Quizzes <i class="fas fa-caret-down"></i></a>
-                    <ul class="sub-menu" style="z-index:50;">
-                        <li><a href="show-quiz.php?cat=Business">Business Quiz</a></li>
-                        <li><a href="show-quiz.php?cat=Design">Design Quiz</a></li>
-                        <li><a href="show-quiz.php?cat=IT">IT Quiz</a></li>
-                    </ul>
-                </li>
-                <li><a href="student-forum.php">Forum</a></li>
-                <li><a href="visitor-faq.php">FAQ</a></li>
-                <li><a href="visitor-aboutus.php">About Us</a></li>
-                <li><a href="#">My Account <i class="fas fa-caret-down"></i></a>
-                    <ul class="sub-menu" style="z-index:50;">
-                        <li><a href="student-profile.php" title="Profile">Profile</a></li>
-                        <li><a href="student-accsetting.php" title="Settings">Settings</a></li> 
-                        <!--<li><a href="logout.php" title="Logout">Logout&nbsp;&nbsp;&nbsp;<i class="fas fa-power-off"></i></a></li>-->
-                        <button id="logout-btn" class="logout-btn">Logout&nbsp;&nbsp;&nbsp;<i class="fas fa-power-off"></i></button>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+     
 
         <!-- The Modal -->
         <div id="logout-confirmation" class="logout-modal">
